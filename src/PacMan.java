@@ -112,15 +112,15 @@ public class PacMan extends JPanel implements ActionListener, KeyListener {
                     "X X X XXXXXXX X X X",
                     "X X X X     X X X X",
                     "X   X X XXX X X   X",
-                    "XXX X X XrX X X XXX",
+                    "XXX X X XrX X XXX X",
                     "X   X   b o   X   X",
                     "XXX X XXXXXXX X XXX",
                     "X   X         X   X",
-                    "X XXXXX XXXXX X XXX",
+                    "X XXXXX XXXXX XXX X",
                     "X                 X",
-                    "X XXXXX XXXXXXX XXX",
-                    "X X             X X",
-                    "X X XXXXX XXXXX X X",
+                    "X XXXXX XXXXXXX   X",
+                    "X X             XXX",
+                    "X X XXXXX XXXX    X",
                     "X      P          X",
                     "X                 X",
                     "XXXXXXXXXXXXXXXXXXX" },
@@ -148,19 +148,19 @@ public class PacMan extends JPanel implements ActionListener, KeyListener {
             { "XXXXXXXXXXXXXXXXXXX",
                     "X                 X",
                     "X XXXXX XXXXXXX XXX",
-                    "X X             X X",
+                    "X X           X X X",
+                    "X X X XXXXXXX   X X",
+                    "X X X         X   X",
                     "X X X XXXXXXX X X X",
-                    "X X X         X X X",
                     "X X X XXXXXXX X X X",
-                    "X X X XXXXXXX X X X",
-                    "X   X   r b    X   X",
+                    "X   X   r b   X   X",
                     "XXX X XXXXXXX X XXX",
-                    "X   X XXXXXXX X   X",
-                    "XXX X XXXXXXX X XXX",
+                    "X   X XXXXXX  X   X",
+                    "XXX X XXXXXX XXXX X",
                     "X   X         X   X",
-                    "X XXXXX XXXXX X XXX",
-                    "X     p o r       X",
-                    "X XXXXX XXXXXXX XXX",
+                    "X XXXXX XXXXX X  XX",
+                    "X     p o r      XX",
+                    "X XXXXX XXXXXXX   X",
                     "X X             X X",
                     "X X XXXXX XXXXX X X",
                     "X     P           X",
@@ -168,7 +168,7 @@ public class PacMan extends JPanel implements ActionListener, KeyListener {
                     "XXXXXXXXXXXXXXXXXXX" },
             {
                     "XXXXXXXXXXXXXXXXXXX",
-                    "X   X     X     X X",
+                    "X   X     X       X",
                     "X X X XXX X XXX X X",
                     "X X X X     X X X X",
                     "X X X X XXX X X X X",
@@ -176,15 +176,15 @@ public class PacMan extends JPanel implements ActionListener, KeyListener {
                     "X X X   X X   X X X",
                     "X X XXX X X XXX X X",
                     "X X  r  X X     X X",
-                    "X XXX XXXXXXXX  XXX",
+                    "X XXX XXXXXXXX  X X",
                     "X   b  b p o   r  X",
                     "X XXX XXXXXXXX  XXX",
-                    "X X             X X",
+                    "X X               X",
                     "X X XXX X X XXX X X",
                     "X X   X X X   X X X",
                     "X XXX X X X XXX X X",
                     "X     X   X     X X",
-                    "X XXXXX XXXXXXX XXX",
+                    "X XXXXX XXXXXXX X X",
                     "X        P        X",
                     "X                 X",
                     "XXXXXXXXXXXXXXXXXXX"
@@ -221,15 +221,15 @@ public class PacMan extends JPanel implements ActionListener, KeyListener {
         setFocusable(true);
 
         // load images
-        wallImage = new ImageIcon(getClass().getResource("./assets/wall.png")).getImage();
-        blueGhost = new ImageIcon(getClass().getResource("./assets/blueGhost.png")).getImage();
-        redGhost = new ImageIcon(getClass().getResource("./assets/redGhost.png")).getImage();
-        orangeGhost = new ImageIcon(getClass().getResource("./assets/orangeGhost.png")).getImage();
-        pinkGhost = new ImageIcon(getClass().getResource("./assets/pinkGhost.png")).getImage();
-        pacmanUp = new ImageIcon(getClass().getResource("./assets/pacmanUp.png")).getImage();
-        pacmanDown = new ImageIcon(getClass().getResource("./assets/pacmanDown.png")).getImage();
-        pacmanLeft = new ImageIcon(getClass().getResource("./assets/pacmanLeft.png")).getImage();
-        pacmanRight = new ImageIcon(getClass().getResource("./assets/pacmanRight.png")).getImage();
+        wallImage = new ImageIcon(getClass().getResource("/assets/wall.png")).getImage();
+        blueGhost = new ImageIcon(getClass().getResource("/assets/blueGhost.png")).getImage();
+        redGhost = new ImageIcon(getClass().getResource("/assets/redGhost.png")).getImage();
+        orangeGhost = new ImageIcon(getClass().getResource("/assets/orangeGhost.png")).getImage();
+        pinkGhost = new ImageIcon(getClass().getResource("/assets/pinkGhost.png")).getImage();
+        pacmanUp = new ImageIcon(getClass().getResource("/assets/pacmanUp.png")).getImage();
+        pacmanDown = new ImageIcon(getClass().getResource("/assets/pacmanDown.png")).getImage();
+        pacmanLeft = new ImageIcon(getClass().getResource("/assets/pacmanLeft.png")).getImage();
+        pacmanRight = new ImageIcon(getClass().getResource("/assets/pacmanRight.png")).getImage();
 
         // load game map
         loadMap();
@@ -249,7 +249,6 @@ public class PacMan extends JPanel implements ActionListener, KeyListener {
                 char tile = tileMaps[level - 1][row].charAt(col);
                 int x = col * tileSize;
                 int y = row * tileSize;
-                System.out.println(row + " " + col + " " + tile);
 
                 switch (tile) {
                     case 'X':
